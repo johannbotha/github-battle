@@ -5,11 +5,17 @@ var PromptContainer = React.createClass({
   contextTypes: {
     router: React.PropTypes.object.isRequired
   },
+
   getInitialState: function () {
     return {
       username: ''
     }
   },
+
+  componentWillReceiveProps: function (nextProps) {
+    console.log('componentWillReceiveProps')
+  },
+
   handleSubmitUser: function (e) {
     e.preventDefault();
     var username = this.state.username;
@@ -29,6 +35,7 @@ var PromptContainer = React.createClass({
       this.context.router.push('/playerTwo/' + this.state.username)
     }
   },
+
   handleUpdateUser: function (event) {
     this.setState({
       username: event.target.value
