@@ -12,13 +12,9 @@ var PromptContainer = React.createClass({
     }
   },
 
-  componentWillReceiveProps: function (nextProps) {
-    console.log('componentWillReceiveProps')
-  },
-
   handleSubmitUser: function (e) {
     e.preventDefault();
-    var username = this.state.username;
+    
     this.setState({
       username: ''
     });
